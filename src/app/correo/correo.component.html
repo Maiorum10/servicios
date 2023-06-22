@@ -1,0 +1,76 @@
+<main>  
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+        <div class="container pt-lg-md">
+          <div class="row justify-content-center">
+            <div class="col-lg-15">
+                  <div class="col-lg-12">
+                      <div class="card bg-gradient-secondary shadow">
+                        <div class="card-body p-lg-5" id="servicios">
+                          <div class="cent">
+                            <button id="btn1" type="button" [ngClass]="{'active': bandera == 1}" [disabled]="state" class="btn btn-outline-primary" (click)="btn_1()">Servicios</button>
+                            <button id="btn2" type="button" [ngClass]="{'active': bandera == 2}" class="btn btn-outline-success" (click)="btn_2()">Encargado</button></div>
+                          <div><br>
+                            <table class="table table-responsive" style="height: 230px; width: 400px; overflow: auto">
+                              <tr class="il" *ngFor="let servicio of anverso let i = index; let first = first; let last = last;"
+                              (click)= "removeId(servicio)">
+                                  <td class="text-uppercase">{{servicio.nombre}}</td>
+                                  <td class="text-uppercase">{{servicio.apellido}}</td>
+                                  <td class="text-uppercase">{{servicio.cedula}}</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+          </div>
+          
+          <div class="row justify-content-center">
+            <div class="col-lg-15">
+                  <div class="col-lg-12">
+                      <div class="card bg-gradient-secondary shadow">
+                        <div class="card-body p-lg-5" id="chat">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-outline-primary btn-sm" (click)="uno()">Regresar</button>
+                            <button type="button" id="ticket" class="btn btn-outline-success btn-sm" (click)="ticket()">Generar ticket de servicio</button>
+                          </div>
+                          <h4 class="mb-1" style="text-transform:uppercase">Mensajería de {{nombre}} {{apellido}}</h4>
+                            <ul id="chat" style="height: 230px; overflow: auto">
+                              <li [ngClass]="{'you': chat.remitente == 'empleado' , 'me': chat.remitente == 'encargado'}" *ngFor="let chat of reverso; let first = first; let last = last;">
+                                <div class="entete">
+                                  <h3>{{chat.fecha}} {{chat.hora}}</h3><br>
+                                  <h2 style="text-transform:uppercase">{{chat.remitente}}:</h2>
+                                </div>
+                                <div class="message">
+                                  {{chat.mensaje}}
+                                </div>
+                              </li>
+                            </ul>
+                          <div class="form-group mb-4">
+                            <textarea class="form-control form-control-alternative" type="text" name="txt" rows="1" cols="80" placeholder="Escriba su mensaje..."[(ngModel)]="txt"></textarea>
+                          </div>
+                          <div>
+                            <button type="button" class="btn btn-default btn-round btn-block btn-lg" (click)="envios()">Enviar mensaje</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+  </main>
+  
+

@@ -1,0 +1,44 @@
+
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+  <div class="container">
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              <img src="./assets/img/home.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item dropdown">
+          <button type="button" id="btn_actualizar" class="btn btn-primary my-4" [routerLink]="['/register']" (click)="pausar()">Actualizar datos</button>
+        </li>
+        <li class="nav-item dropdown">
+          <button type="button" id="btn_login" class="btn btn-primary my-4" [routerLink]="['/login']" (click)="pausar()">Login</button>
+        </li>
+        <li class="nav-item dropdown">
+          <button type="button" id="btn_correo" class="btn btn-primary my-4" [routerLink]="['/home']" (click)="pausar()">Mensajería</button>
+        </li>
+        <li class="nav-item dropdown">
+          <button type="button" id="btn_tickets" class="btn btn-primary my-4" [routerLink]="['/tickets']" (click)="pausar()">Tickets</button>
+        </li>
+        <li class="nav-item dropdown">
+          <button type="button" id="btn_logout" class="btn btn-primary my-4" (click)="refresh()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

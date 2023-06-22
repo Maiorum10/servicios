@@ -1,0 +1,44 @@
+<main>  
+      <section class="section section-shaped section-lg">
+        <div class="shape shape-style-1 bg-gradient-default">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container pt-lg-md text-uppercase" id="htmlData" #htmlData>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+                  <div class="col-lg-12">
+                      <div class="card bg-gradient-secondary shadow">
+                        <div class="card-body p-lg-5">
+                          <h4 class="mb-1">Seguimiento:</h4>
+                          <div class="table-responsive" style="height: 225px" [ngClass]="{'focused':focus1===true}">
+                            <table class="table">
+                              <tbody>
+                                <tr *ngFor="let ticket of anverso; let i = index;">
+                                  <td>{{i}} Estado: {{ticket.estado}}; Fecha_inicio: {{ticket.fecha_inicio}}; Fecha_fin: {{ticket.fecha_fin}}; 
+                                    Motivo: {{ticket.motivo}}; Resolucion: {{ticket.resolucion}}; Redireccionado de: {{ticket.redireccionado}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div id="btns">
+                            <button type="button" class="btn btn-default btn-round btn-lg" [routerLink]="['/home']">Regresar</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+  
+  
